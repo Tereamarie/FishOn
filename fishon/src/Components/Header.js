@@ -13,7 +13,7 @@ const Header = () => {
       <div className="header">
         <span className="date">{date}</span>
   
-        <h1>FishOn!<th></th>Fishing App</h1>
+        <h1>FishOn! </h1>
         <span className="temp">98°</span>
       </div>
     );
