@@ -11,7 +11,7 @@ const StyledTopBar = styled.div`
   flex-direction: row;
   position: fixed;
   height: 44px;
-  background-color: rgb(12, 11, 11);
+  background-color: green;
   z-index: 1000000;
 `;
 const TopBarContainer = styled.div`
@@ -88,10 +88,11 @@ function TopBar() {
           <span>Maps</span>
         </ContainerCenter>
         <ContainerRight>
-          <span>LOG IN</span>
+          <span type='submit'>LOG IN</span>
         </ContainerRight>
       </TopBarContainer>
     </StyledTopBar>
+    
   );
 }
 

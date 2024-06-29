@@ -1,60 +1,49 @@
-import React, { useState, useContext } from 'react';
-// ... (other imports)
+import React, { useState } from 'react';
 
-const AuthContext = React.createContext();
+function LoginForm() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const handleLogin = () => {
-    // Simulate login logic (replace with actual authentication)
-    setIsLoggedIn(true);
+    // Simulate login logic (replace with your actual authentication)
+    if (username === 'admin' && password === 'password123') {
+      // Login successful
+      console.log('Login successful!');
+      // Redirect or handle successful login here
+    } else {
+      setErrorMessage('Invalid username or password');
+    }
   };
 
-  const handleRegister = () => {
-    // Simulate registration logic (replace with actual registration)
-    setIsLoggedIn(true);
-  };
-
-  const value = { isLoggedIn, handleLogin, handleRegister };
-
   return (
-    <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-  );
-};
-
-const LoginRegister = () => {
-  const context = useContext(AuthContext);
-
-  const { isLoggedIn, handleLogin, handleRegister } = context;
-
-  if (isLoggedIn) {
-    return <p>Welcome back! You're logged in.</p>;
-  }
-
-  return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        {/* Login form fields */}
-        <button type="submit">Login</button>
-      </form>
-      <h2>Register</h2>
-      <form onSubmit={handleRegister}>
-        {/* Registration form fields */}
-        <button type="submit">Register</button>
-      </form>
-    </>
-  );
-};
-
-export default function LogIn() {
-  return (
-    <AuthProvider>
-      <LoginRegister />
-      {/* Other app components */}
-    </AuthProvider>
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <button type="submit">Login</button>
+    </form>
   );
 }
-/**This component demonstrates a basic implementation using React Context to manage the login state. It provides separate forms for login and registration, but you'll need to replace the placeholder logic 
- * with your preferred authentication solution. */
+
+export default LoginForm;
