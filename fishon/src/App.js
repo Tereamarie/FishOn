@@ -6,11 +6,11 @@ import LogIn from './Components/LogIn.js';
 import RegistrationForm from "./Components/RegistrationForm.js";
 const App = () => (
   <div className="App">
-    <Header />
-    <TopBar />
-    <CatchLog />
-    
-   
+    {/* <Header />
+    <TopBar /> */}
+    {/* <CatchLog />
+     */}
+     <RegistrationForm />
   </div>
 );
 

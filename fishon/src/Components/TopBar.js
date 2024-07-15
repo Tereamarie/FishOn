@@ -80,7 +80,7 @@ function TopBar() {
     <StyledTopBar>
       <TopBarContainer>
         <ContainerCenter>
-          <InputForm></InputForm>
+          <InputForm><span>Create Account</span></InputForm>
 
           <span>Zone Regs</span>
           <span>Lures</span>
@@ -89,6 +89,7 @@ function TopBar() {
         </ContainerCenter>
         <ContainerRight>
           <span type='submit'>LOG IN</span>
+         
         </ContainerRight>
       </TopBarContainer>
     </StyledTopBar>

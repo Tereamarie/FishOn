@@ -2,7 +2,40 @@
 
 //JavaScript
 import React, { useState } from 'react';
+import styled from "styled-components";
 
+const InputForm = styled.div`
+  border: 1px solid red;
+  margin: 25px;
+  width: 100%;
+  padding: 5px;
+  margin-right: 52%;
+  @media (min-width: 1280px) {
+    width: 1280px;
+  }
+`;
+const Input = styled.input`
+  padding: 5px;
+  margin: 0.5em;
+  width: 95%;
+  color: black;
+  background: white;
+  border: none;
+  border-radius: 3px;
+   @media (min-width: 1280px) {
+    width: 1280px;
+  }
+`;
+const StyledButton = styled.div`
+
+  margin: 25px;
+  width: 100%;
+  padding: 5px;
+  margin-right: 52%;
+  @media (min-width: 1280px) {
+    width: 1280px;
+  }
+`;
 function RegistrationForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,9 +64,11 @@ function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <InputForm>
+      
       <div className="form-group">
         <label htmlFor="name">Name:</label>
-        <input
+        <Input  
           type="text"
           id="name"
           name="name"
@@ -43,7 +78,7 @@ function RegistrationForm() {
       </div>
       <div className="form-group">
         <label htmlFor="email">Email:</label>
-        <input
+        <Input
           type="email"
           id="email"
           name="email"
@@ -53,7 +88,7 @@ function RegistrationForm() {
       </div>
       <div className="form-group">
         <label htmlFor="password">Password:</label>
-        <input
+        <Input
           type="password"
           id="password"
           name="password"
@@ -63,7 +98,7 @@ function RegistrationForm() {
       </div>
       <div className="form-group">
         <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input
+        <Input
           type="password"
           id="confirmPassword"
           name="confirmPassword"
@@ -71,8 +106,11 @@ function RegistrationForm() {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
       </div>
+      </InputForm>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <StyledButton>
       <button type="submit">Register</button>
+      </StyledButton>
     </form>
   );
 }
