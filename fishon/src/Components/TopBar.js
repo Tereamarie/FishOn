@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import RegistrationForm from "./RegistrationForm";
 // Refactor this component to use styled components and not classNames.
 // You can find the corresponding CSS in the CSS/index.css file
 
@@ -77,10 +79,14 @@ const InputForm = styled.div`
 `;
 function TopBar() {
   return (
+    <Router>
+      
     <StyledTopBar>
       <TopBarContainer>
         <ContainerCenter>
-          <InputForm><span>Create Account</span></InputForm>
+          <InputForm>
+          <span><Link to="RegistrationForm">Create Account</Link></span>
+          </InputForm>
 
           <span>Zone Regs</span>
           <span>Lures</span>
@@ -94,6 +100,7 @@ function TopBar() {
       </TopBarContainer>
     </StyledTopBar>
     
+    </Router>
   );
 }
 

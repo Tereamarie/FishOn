@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 const InputForm = styled.div`
-  border: 1px solid red;
+  border: 1px solid grey;
   margin: 25px;
   width: 100%;
   padding: 5px;
