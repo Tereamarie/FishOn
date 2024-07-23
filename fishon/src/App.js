@@ -1,17 +1,16 @@
 import React from "react";
-import Header from './Components/Header.js';
-import TopBar from './Components/TopBar.js';
-import CatchLog from './Components/CatchLog/catchLog.js';
-import LogIn from './Components/LogIn.js';
-import RegistrationForm from "./Components/RegistrationForm.js";
-const App = () => (
-  <div className="App">
-    <Header />
-    <TopBar /> 
-     {/* <CatchLog /> */}
-    
-     {/* <RegistrationForm /> */}
-  </div>
-);
+import TopBar from "./Components/TopBar/TopBar.js";
+import Header from "./Components/Header/Header.js";
+import Content from "./Components/Content/Content";
+
+const App = () => {
+  return (
+    <div className="App">
+      <TopBar />
+      <Header />
+      <Content />
+    </div>
+  );
+};
 
 export default App;
