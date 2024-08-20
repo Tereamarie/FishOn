@@ -11,7 +11,7 @@ function TopBar() {
     <Router>
       
       <div className="top-bar">
-          
+         
         <div className="top-bar container">
           <div className="top-bar container container-left">
             <div className="top-bar container container-left span">
@@ -21,7 +21,10 @@ function TopBar() {
                     <div className="top-bar container container-center span:hover">
                       <div className="top-bar container container-right">
                         <div className="top-bar container container-right span">
+          
           <span>Zone Regs</span>
+
+
           <span>Lures</span>
           <span>Fish Population</span>
           <span>Maps</span>
